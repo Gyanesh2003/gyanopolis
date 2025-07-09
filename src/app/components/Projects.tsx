@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 
 const projects = [
   {
@@ -38,16 +39,20 @@ const Projects = () => {
               onMouseLeave={() => project.title === "Project One" && setHovered(null)}
               className="block"
             >
-              <img
+              <Image
                 src={project.image}
                 alt={project.title}
+                width={600}
+                height={192}
                 className="w-full h-48 object-cover cursor-pointer"
               />
               {project.title === "Project One" && hovered === project.title && (
                 <div className="absolute inset-0 flex items-center justify-center z-20 bg-black bg-opacity-70">
-                  <img
+                  <Image
                     src={project.image}
                     alt={project.title + ' full view'}
+                    width={900}
+                    height={640}
                     className="max-h-[80vh] max-w-[90vw] rounded shadow-lg border-4 border-white"
                   />
                 </div>
